@@ -4,7 +4,7 @@
 	if (locationbar.visible) return;
 
 	// Shim matchesSelector
-	var matches = body.matchesSelector || body.mozMatchesSelector;
+	var matches = body.matchesSelector || body.mozMatchesSelector || body.webkitMatchesSelector;
 
 	// Seelctor matches external links, but allows https/http switching
 	var selector = "a[href^='http']:not([href*='://" + location.host + "']):not([target='_blank'])";
